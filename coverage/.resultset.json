@@ -4,6 +4,18 @@
       "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/controllers/api/v1/recipes_controller.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
           null
         ]
       },
@@ -12,8 +24,39 @@
           1,
           null
         ]
+      },
+      "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/facades/recipe_facade.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/services/recipe_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1677888863
+    "timestamp": 1677891142
   }
 }
