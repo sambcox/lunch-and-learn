@@ -1,9 +1,8 @@
 class Api::V1::RecipesController < ApplicationController
   def index
-    if recipe_params[:country]
-      recipes = RecipeFacade.find_by_country(recipe_params[:country])
-      render json: RecipeSerializer.new(recipes)
-    end
+    params[:country] = CountryFacade.random_country unless recipe_params[:country]
+    recipes = RecipeFacade.find_by_country(recipe_params[:country])
+    render json: RecipeSerializer.new(recipes)
   end
 
   private
