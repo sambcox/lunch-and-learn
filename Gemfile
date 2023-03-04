@@ -34,6 +34,8 @@ gem 'jsonapi-serializer'
 gem 'rubocop-rails', require: false
 gem 'figaro'
 
+gem 'email_validator'
+
 
 group :test do
   gem 'shoulda-matchers'

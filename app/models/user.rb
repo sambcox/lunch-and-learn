@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   validates_presence_of :email, :name, :api_key
+  validates :email, uniqueness: { case_sensitive: false, message: 'User already exists with given email' }
+  validates :email, email: true
+
   before_validation :generate_api_key
 
   def generate_api_key
