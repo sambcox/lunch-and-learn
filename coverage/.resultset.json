@@ -7,7 +7,7 @@
           1,
           1,
           1,
-          0,
+          1,
           null,
           null,
           null,
@@ -31,7 +31,7 @@
           1,
           1,
           1,
-          1,
+          20,
           null,
           null,
           null
@@ -55,8 +55,30 @@
           null,
           null
         ]
+      },
+      "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/poros/recipe.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          20,
+          20,
+          20,
+          20,
+          20,
+          null,
+          null
+        ]
+      },
+      "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/serializers/recipe_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1677891142
+    "timestamp": 1677892367
   }
 }

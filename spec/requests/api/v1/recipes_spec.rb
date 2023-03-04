@@ -12,12 +12,14 @@ RSpec.describe 'Recipes Requests', type: :request do
 
         expect(parsed_response[:data]).to be_a(Array)
 
-        expect(parsed_response[:data].first[:id]).to eq(nil)
-        expect(parsed_response[:data].first[:type]).to eq('recipe')
-        expect(parsed_response[:data].first[:attributes]).to have_key('title')
-        expect(parsed_response[:data].first[:attributes]).to have_key('image')
-        expect(parsed_response[:data].first[:attributes]).to have_key('url')
-        expect(parsed_response[:data].first[:attributes][:country]).to eq('thailand')
+        parsed_response[:data].each do |recipe|
+          expect(recipe[:id]).to eq(nil)
+          expect(recipe[:type]).to eq('recipe')
+          expect(recipe[:attributes]).to have_key(:title)
+          expect(recipe[:attributes]).to have_key(:image)
+          expect(recipe[:attributes]).to have_key(:url)
+          expect(recipe[:attributes][:country]).to eq('Thailand')
+        end
       end
     end
   end

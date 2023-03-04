@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-03-03T17:52:22-07:00">2023-03-03T17:52:22-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-03-03T18:12:47-07:00">2023-03-03T18:12:47-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  95.65%
+  100.0%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="green">
+         4.38
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>4</b> files in total.
+    <b>6</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>23</b> relevant lines,
-    <span class="green"><b>22</b> lines covered</span> and
-    <span class="red"><b>1</b> lines missed. </span>
+    <b>34</b> relevant lines,
+    <span class="green"><b>34</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
-  95.65%
+  100.0%
 </span>
 )
   </div>
@@ -72,12 +72,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#9cb33491518f8455aeb2968b8a6e791bf319cb13" class="src_link" title="app/controllers/api/v1/recipes_controller.rb">app/controllers/api/v1/recipes_controller.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">87.50 %</td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">14</td>
             <td class="cell--number">8</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.13</td>
             
           </tr>
         
@@ -98,6 +98,28 @@
             <td class="cell--number">8</td>
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">4.80</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#79c24628b077159cc4f37d64cc39a96b5319f37d" class="src_link" title="app/poros/recipe.rb">app/poros/recipe.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">12.88</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#a94840c43b5a268597d803d6b82e3ce797e6d927" class="src_link" title="app/serializers/recipe_serializer.rb">app/serializers/recipe_serializer.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">3</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -135,8 +157,8 @@
   <div class="header">
     <h3>app/controllers/api/v1/recipes_controller.rb</h3>
     <h4>
-      <span class="yellow">
-  87.5%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -146,8 +168,8 @@
 
     <div class="t-line-summary">
       <b>8</b> relevant lines.
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -202,8 +224,8 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="5">
-            
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
             
 
             
@@ -435,18 +457,18 @@
 
             
 
-            <code class="ruby">    recipes.map do |recipes|</code>
+            <code class="ruby">    recipes.map do |recipe|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="20" data-linenumber="5">
+            <span class="hits">20</span>
             
 
             
 
-            <code class="ruby">      Recipe.new(recipe[:recipe])</code>
+            <code class="ruby">      Recipe.new(recipe[:recipe], country)</code>
           </li>
         </div>
       
@@ -474,6 +496,222 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="79c24628b077159cc4f37d64cc39a96b5319f37d">
+  <div class="header">
+    <h3>app/poros/recipe.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>8</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class Recipe</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  attr_reader :title, :image, :url, :country, :id</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def initialize(data, country)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="4">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">    @id = nil</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="5">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">    @title = data[:label]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="6">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">    @image = data[:image]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="7">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">    @url = data[:url]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="8">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">    @country = country</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="a94840c43b5a268597d803d6b82e3ce797e6d927">
+  <div class="header">
+    <h3>app/serializers/recipe_serializer.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class RecipeSerializer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  include JSONAPI::Serializer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  attributes :title, :url, :country, :image</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
             
             
 
