@@ -19,6 +19,17 @@ RSpec.describe 'Learning Resources Requests', type: :request do
         expect(parsed_response[:data][:attributes][:images].first).to have_key(:alt_tag)
         expect(parsed_response[:data][:attributes][:country]).to eq('Finland')
       end
+
+      it 'returns an error if no country is passed in' do
+        get api_v1_learning_resources_path
+
+        expect(response.status).to eq(400)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response[:message]).to eq('There was an error processing your request')
+        expect(parsed_response[:errors]).to eq(["Country must be provided"])
+      end
     end
   end
 end
