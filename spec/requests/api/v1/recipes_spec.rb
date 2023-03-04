@@ -42,6 +42,16 @@ RSpec.describe 'Recipes Requests', type: :request do
           expect(recipe[:attributes][:country]).to eq(country)
         end
       end
+
+      it 'will return an empty array if param is given but no text is given' do
+        get api_v1_recipes_path(country: '')
+
+        expect(response).to be_successful
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response[:data]).to eq([])
+      end
     end
   end
 end
