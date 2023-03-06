@@ -20,5 +20,23 @@ RSpec.describe 'Tourist Sights Requests' do
         expect(sight[:attributes][:address]).to include('Thailand')
       end
     end
+
+    it 'returns an error if no country is given' do
+      get api_v1_tourist_sights_path
+
+      expect(response.status).to eq(400)
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_response[:errors]).to eq(['Country must be provided'])
+    end
+
+    it 'returns an error if invalid country is given' do
+      get api_v1_tourist_sights_path(country: 'Invalid')
+
+      expect(response.status).to eq(400)
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_response[:errors]).to eq(['Country provided must be a valid country'])
+    end
   end
 end
