@@ -99,22 +99,22 @@ RSpec.describe 'Favorite Requests' do
   describe 'favorites get requests' do
     let(:favorites) do
       user.favorites.create!({
-        country: 'thailand',
-        recipe_title: 'Test Favorite',
-        recipe_link: 'https://www.testurl.com'
-      })
+                               country: 'thailand',
+                               recipe_title: 'Test Favorite',
+                               recipe_link: 'https://www.testurl.com'
+                             })
 
       user.favorites.create!({
-        country: 'finland',
-        recipe_title: 'Test Favorite 2',
-        recipe_link: 'https://www.testurl2.com'
-      })
+                               country: 'finland',
+                               recipe_title: 'Test Favorite 2',
+                               recipe_link: 'https://www.testurl2.com'
+                             })
 
       user.favorites.create!({
-        country: 'sweden',
-        recipe_title: 'Test Favorite 3',
-        recipe_link: 'https://www.testurl3.com'
-      })
+                               country: 'sweden',
+                               recipe_title: 'Test Favorite 3',
+                               recipe_link: 'https://www.testurl3.com'
+                             })
     end
     it 'returns all favorites for a user' do
       get api_v1_favorites_path(api_key: user.api_key)

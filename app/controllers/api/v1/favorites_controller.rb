@@ -19,9 +19,9 @@ class Api::V1::FavoritesController < ApplicationController
   private
 
   def set_user
-    unless @user = User.find_by_api_key(favorite_api_key[:api_key])
-      raise ActiveRecord::RecordNotFound, 'Unable to validate API key'
-    end
+    return if @user = User.find_by_api_key(favorite_api_key[:api_key])
+
+    raise ActiveRecord::RecordNotFound, 'Unable to validate API key'
   end
 
   def favorite_api_key
