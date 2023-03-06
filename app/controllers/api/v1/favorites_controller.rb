@@ -1,13 +1,15 @@
 class Api::V1::FavoritesController < ApplicationController
   def create
-    user = User.find_by_api_key(params[:api_key])
+    if user = User.find_by_api_key(params[:api_key])
+      favorite = user.favorites.new(favorite_params)
 
-    favorite = user.favorites.new(favorite_params)
-
-    if favorite.save
-      render json: { success: 'Favorite added successfully' }, status: :created
+      if favorite.save
+        render json: { success: 'Favorite added successfully' }, status: :created
+      else
+        render json: ErrorSerializer.serialize(Error.new(favorite.errors)), status: :unprocessable_entity
+      end
     else
-      render json: ErrorSerializer.serialize(Error.new(favorite.errors)), status: :unprocessable_entity
+      raise ActiveRecord::RecordNotFound.new('Unable to validate API key')
     end
   end
 
