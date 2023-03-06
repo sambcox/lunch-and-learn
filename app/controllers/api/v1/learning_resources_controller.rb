@@ -7,13 +7,6 @@ class Api::V1::LearningResourcesController < ApplicationController
 
   private
 
-  def confirm_country
-    raise BadDataError, 'Country must be provided' unless params[:country]
-    return if CountryFacade.valid_country?(learning_resource_params[:country])
-
-    raise BadDataError, 'Country provided must be a valid country'
-  end
-
   def learning_resource_params
     params.permit(:country)
   end
