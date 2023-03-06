@@ -7,7 +7,7 @@ class Api::V1::FavoritesController < ApplicationController
     if favorite.save
       render json: { success: 'Favorite added successfully' }, status: :created
     else
-      render json: ErrorSerializer.serialize(Error.new(user.errors)), status: :unprocessable_entity
+      render json: ErrorSerializer.serialize(Error.new(favorite.errors)), status: :unprocessable_entity
     end
   end
 
