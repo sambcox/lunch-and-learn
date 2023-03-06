@@ -29,7 +29,7 @@
           1,
           null,
           1,
-          23,
+          24,
           null,
           null
         ]
@@ -38,10 +38,8 @@
         "lines": [
           1,
           1,
-          6,
-          2,
           null,
-          null,
+          1,
           4,
           null,
           4,
@@ -52,6 +50,21 @@
           null,
           null,
           1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          10,
+          4,
+          null,
+          null,
+          null,
+          1,
+          10,
+          null,
           null,
           1,
           4,
@@ -66,7 +79,7 @@
           1,
           null,
           1,
-          2,
+          4,
           null,
           null,
           1,
@@ -86,7 +99,7 @@
           1,
           1,
           null,
-          10,
+          12,
           null,
           null,
           null,
@@ -100,26 +113,34 @@
           1,
           null,
           1,
-          10,
-          10,
+          12,
+          12,
           null,
           null,
           1,
-          10,
+          12,
           7,
           null,
-          3,
+          5,
           null,
           null,
           null,
           1,
           null,
-          10,
+          12,
           null,
           null,
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/serializers/favorite_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -357,6 +378,6 @@
         ]
       }
     },
-    "timestamp": 1678063789
+    "timestamp": 1678065007
   }
 }

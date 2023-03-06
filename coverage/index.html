@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-03-05T17:49:49-07:00">2023-03-05T17:49:49-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-03-05T18:10:07-07:00">2023-03-05T18:10:07-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.41
+         4.4
        </span>
     </span> hits/line
     )
@@ -39,12 +39,12 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>23</b> files in total.
+    <b>24</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>156</b> relevant lines,
-    <span class="green"><b>156</b> lines covered</span> and
+    <b>166</b> relevant lines,
+    <span class="green"><b>166</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,11 +73,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#75f81a5f89cd4869b3874e827e5cac8202d0c03a" class="src_link" title="app/controllers/api/v1/favorites_controller.rb">app/controllers/api/v1/favorites_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">11</td>
+            <td class="cell--number">34</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">18</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.55</td>
+            <td class="cell--number">2.89</td>
             
           </tr>
         
@@ -121,7 +121,7 @@
             <td class="cell--number">7</td>
             <td class="cell--number">7</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.14</td>
+            <td class="cell--number">1.43</td>
             
           </tr>
         
@@ -198,7 +198,7 @@
             <td class="cell--number">8</td>
             <td class="cell--number">8</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">3.75</td>
+            <td class="cell--number">3.88</td>
             
           </tr>
         
@@ -209,7 +209,7 @@
             <td class="cell--number">11</td>
             <td class="cell--number">11</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">5.00</td>
+            <td class="cell--number">5.91</td>
             
           </tr>
         
@@ -242,7 +242,18 @@
             <td class="cell--number">3</td>
             <td class="cell--number">3</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">4.00</td>
+            <td class="cell--number">4.67</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#aecb68db2b28ef972e43c1f45dd7dba29d02cb4e" class="src_link" title="app/serializers/favorite_serializer.rb">app/serializers/favorite_serializer.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
             
           </tr>
         
@@ -354,8 +365,8 @@
     
 
     <div class="t-line-summary">
-      <b>11</b> relevant lines.
-      <span class="green"><b>11</b> lines covered</span> and
+      <b>18</b> relevant lines.
+      <span class="green"><b>18</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -384,40 +395,40 @@
 
             
 
+            <code class="ruby">  before_action :set_user</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">  def create</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="3">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="4" data-linenumber="5">
+            <span class="hits">4</span>
             
 
             
 
-            <code class="ruby">    unless user = User.find_by_api_key(params[:api_key])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="4">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">      raise ActiveRecord::RecordNotFound, &#39;Unable to validate API key&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="5">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
+            <code class="ruby">    favorite = @user.favorites.new(favorite_params)</code>
           </li>
         </div>
       
@@ -439,34 +450,12 @@
 
             
 
-            <code class="ruby">    favorite = user.favorites.new(favorite_params)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="9">
-            <span class="hits">4</span>
-            
-
-            
-
             <code class="ruby">    if favorite.save</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
+          <li class="covered" data-hits="1" data-linenumber="8">
             <span class="hits">1</span>
             
 
@@ -477,7 +466,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
@@ -488,7 +477,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="12">
+          <li class="covered" data-hits="3" data-linenumber="10">
             <span class="hits">3</span>
             
 
@@ -499,7 +488,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -510,7 +499,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -521,7 +510,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -532,13 +521,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="14">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">  def index</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="15">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    favorites = @user.favorites</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="16">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    render json: FavoriteSerializer.new(favorites)</code>
           </li>
         </div>
       
@@ -549,29 +560,29 @@
 
             
 
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
+          <li class="covered" data-hits="1" data-linenumber="19">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def favorite_params</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="19">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">    params.permit(:country, :recipe_link, :recipe_title)</code>
+            <code class="ruby">  private</code>
           </li>
         </div>
       
@@ -582,12 +593,155 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def set_user</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="10" data-linenumber="22">
+            <span class="hits">10</span>
+            
+
+            
+
+            <code class="ruby">    unless @user = User.find_by_api_key(favorite_api_key[:api_key])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="23">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">      raise ActiveRecord::RecordNotFound, &#39;Unable to validate API key&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def favorite_api_key</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="10" data-linenumber="28">
+            <span class="hits">10</span>
+            
+
+            
+
+            <code class="ruby">    params.permit(:api_key)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="31">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def favorite_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="32">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    params.permit(:country, :recipe_link, :recipe_title)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
@@ -1261,8 +1415,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="6">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="4" data-linenumber="6">
+            <span class="hits">4</span>
             
 
             
@@ -2226,8 +2380,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="23" data-linenumber="11">
-            <span class="hits">23</span>
+          <li class="covered" data-hits="24" data-linenumber="11">
+            <span class="hits">24</span>
             
 
             
@@ -2334,8 +2488,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="5">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="12" data-linenumber="5">
+            <span class="hits">12</span>
             
 
             
@@ -2345,8 +2499,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="6">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="12" data-linenumber="6">
+            <span class="hits">12</span>
             
 
             
@@ -2389,8 +2543,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="10">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="12" data-linenumber="10">
+            <span class="hits">12</span>
             
 
             
@@ -2422,8 +2576,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="13">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="13">
+            <span class="hits">5</span>
             
 
             
@@ -2488,8 +2642,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="19">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="12" data-linenumber="19">
+            <span class="hits">12</span>
             
 
             
@@ -2922,8 +3076,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="4">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="12" data-linenumber="4">
+            <span class="hits">12</span>
             
 
             
@@ -2978,6 +3132,81 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="aecb68db2b28ef972e43c1f45dd7dba29d02cb4e">
+  <div class="header">
+    <h3>app/serializers/favorite_serializer.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class FavoriteSerializer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  include JSONAPI::Serializer</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  attributes :recipe_title, :recipe_link, :country, :created_at</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
             
             
 

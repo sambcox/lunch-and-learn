@@ -117,11 +117,7 @@ RSpec.describe 'Favorite Requests' do
       })
     end
     it 'returns all favorites for a user' do
-      favorite_params = {
-        api_key: user.api_key
-      }
-      headers = { 'CONTENT_TYPE' => 'application/json' }
-      get api_v1_favorites_path, headers: headers, params: JSON.generate(favorite_params)
+      get api_v1_favorites_path(api_key: user.api_key)
 
       expect(response.status).to eq(200)
       parsed_response = JSON.parse(response.body, symbolize_names: true)
@@ -134,6 +130,34 @@ RSpec.describe 'Favorite Requests' do
         expect(favorite[:attributes][:country]).to eq(db_favorite.country)
         expect(favorite[:attributes][:created_at]).to eq(db_favorite.created_at)
       end
+    end
+
+    it 'returns an error if no API key is passed in' do
+      get api_v1_favorites_path
+
+      expect(response.status).to eq(404)
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_response[:errors]).to eq(['Unable to validate API key'])
+    end
+
+    it 'returns an error if wrong API key is passed in' do
+      get api_v1_favorites_path('wrong_api_key')
+
+      expect(response.status).to eq(404)
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_response[:errors]).to eq(['Unable to validate API key'])
+    end
+
+    it 'returns an empty array if no favorites exist' do
+      user = User.create!(name: 'Brian Cox', email: 'brian@example.com')
+      get api_v1_favorites_path(api_key: user.api_key)
+
+      expect(response.status).to eq(200)
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_response[:data]).to eq([])
     end
   end
 end
