@@ -28,7 +28,7 @@ RSpec.describe 'Learning Resources Requests', type: :request do
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
         expect(parsed_response[:message]).to eq('There was an error processing your request')
-        expect(parsed_response[:errors]).to eq(["Country must be provided"])
+        expect(parsed_response[:errors]).to eq(['Country must be provided'])
       end
     end
   end

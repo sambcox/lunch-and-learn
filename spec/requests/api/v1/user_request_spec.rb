@@ -7,7 +7,7 @@ RSpec.describe 'User Requests' do
         name: 'Learning User',
         email: 'learninguser@example.com'
       }
-      headers = { 'CONTENT_TYPE' => 'application/json'}
+      headers = { 'CONTENT_TYPE' => 'application/json' }
       post api_v1_users_path, headers: headers, params: JSON.generate(user_params)
 
       expect(response).to be_successful
@@ -58,7 +58,7 @@ RSpec.describe 'User Requests' do
       expect(response.status).to eq(422)
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-      expect(parsed_response[:errors]).to eq(["Email is invalid"])
+      expect(parsed_response[:errors]).to eq(['Email is invalid'])
     end
 
     it 'will not create a duplicate user' do
@@ -72,7 +72,7 @@ RSpec.describe 'User Requests' do
       expect(response.status).to eq(422)
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-      expect(parsed_response[:errors]).to eq(["Email User already exists with given email"])
+      expect(parsed_response[:errors]).to eq(['Email User already exists with given email'])
     end
   end
 end

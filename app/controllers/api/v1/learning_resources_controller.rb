@@ -1,11 +1,9 @@
 class Api::V1::LearningResourcesController < ApplicationController
   def index
-    if params[:country]
-      resource = LearningResourceFacade.find_resources(learning_resource_params[:country])
-      render json: LearningResourceSerializer.new(resource)
-    else
-      raise BadDataError.new('Country must be provided')
-    end
+    raise BadDataError, 'Country must be provided' unless params[:country]
+
+    resource = LearningResourceFacade.find_resources(learning_resource_params[:country])
+    render json: LearningResourceSerializer.new(resource)
   end
 
   private

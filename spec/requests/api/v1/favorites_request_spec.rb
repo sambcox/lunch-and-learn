@@ -10,7 +10,7 @@ RSpec.describe 'Favorite Requests' do
         recipe_link: 'https://www.testurl.com',
         recipe_title: 'Test Favorite'
       }
-      headers = { 'CONTENT_TYPE' => 'application/json'}
+      headers = { 'CONTENT_TYPE' => 'application/json' }
       post api_v1_favorites_path, headers: headers, params: JSON.generate(favorite_params)
 
       expect(response.status).to eq(201)
@@ -25,7 +25,7 @@ RSpec.describe 'Favorite Requests' do
         recipe_link: 'https://www.testurl.com',
         recipe_title: 'Test Favorite'
       }
-      headers = { 'CONTENT_TYPE' => 'application/json'}
+      headers = { 'CONTENT_TYPE' => 'application/json' }
       post api_v1_favorites_path, headers: headers, params: JSON.generate(favorite_params)
 
       expect(response.status).to eq(422)
@@ -40,7 +40,7 @@ RSpec.describe 'Favorite Requests' do
         country: 'thailand',
         recipe_title: 'Test Favorite'
       }
-      headers = { 'CONTENT_TYPE' => 'application/json'}
+      headers = { 'CONTENT_TYPE' => 'application/json' }
       post api_v1_favorites_path, headers: headers, params: JSON.generate(favorite_params)
 
       expect(response.status).to eq(422)
@@ -55,7 +55,7 @@ RSpec.describe 'Favorite Requests' do
         country: 'thailand',
         recipe_link: 'https://www.testurl.com'
       }
-      headers = { 'CONTENT_TYPE' => 'application/json'}
+      headers = { 'CONTENT_TYPE' => 'application/json' }
       post api_v1_favorites_path, headers: headers, params: JSON.generate(favorite_params)
 
       expect(response.status).to eq(422)
@@ -71,13 +71,13 @@ RSpec.describe 'Favorite Requests' do
         recipe_title: 'Test Favorite',
         recipe_link: 'https://www.testurl.com'
       }
-      headers = { 'CONTENT_TYPE' => 'application/json'}
+      headers = { 'CONTENT_TYPE' => 'application/json' }
       post api_v1_favorites_path, headers: headers, params: JSON.generate(favorite_params)
 
       expect(response.status).to eq(404)
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-      expect(parsed_response[:errors]).to eq(["Unable to validate API key"])
+      expect(parsed_response[:errors]).to eq(['Unable to validate API key'])
     end
 
     it 'returns an error if no api key is given' do
@@ -86,13 +86,13 @@ RSpec.describe 'Favorite Requests' do
         recipe_title: 'Test Favorite',
         recipe_link: 'https://www.testurl.com'
       }
-      headers = { 'CONTENT_TYPE' => 'application/json'}
+      headers = { 'CONTENT_TYPE' => 'application/json' }
       post api_v1_favorites_path, headers: headers, params: JSON.generate(favorite_params)
 
       expect(response.status).to eq(404)
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-      expect(parsed_response[:errors]).to eq(["Unable to validate API key"])
+      expect(parsed_response[:errors]).to eq(['Unable to validate API key'])
     end
   end
 end
