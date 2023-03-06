@@ -348,6 +348,15 @@
           null
         ]
       },
+      "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/controllers/api/v1/tourist_sights_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/controllers/api/v1/users_controller.rb": {
         "lines": [
           1,
@@ -378,6 +387,6 @@
         ]
       }
     },
-    "timestamp": 1678120027
+    "timestamp": 1678120122
   }
 }
