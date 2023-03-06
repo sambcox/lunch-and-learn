@@ -8,8 +8,10 @@ class Api::V1::TouristSightsController < ApplicationController
   private
 
   def confirm_country
-    raise BadDataError.new('Country must be provided') unless params[:country]
-    raise BadDataError.new('Country provided must be a valid country') unless CountryFacade.valid_country?(tourist_sights_params[:country])
+    raise BadDataError, 'Country must be provided' unless params[:country]
+    return if CountryFacade.valid_country?(tourist_sights_params[:country])
+
+    raise BadDataError, 'Country provided must be a valid country'
   end
 
   def tourist_sights_params

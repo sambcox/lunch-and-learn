@@ -38,5 +38,14 @@ RSpec.describe 'Tourist Sights Requests' do
 
       expect(parsed_response[:errors]).to eq(['Country provided must be a valid country'])
     end
+
+    it 'returns an error if country param is blank' do
+      get api_v1_tourist_sights_path(country: '')
+
+      expect(response.status).to eq(400)
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_response[:errors]).to eq(['Country provided must be a valid country'])
+    end
   end
 end
