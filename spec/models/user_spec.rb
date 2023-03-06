@@ -8,6 +8,11 @@ RSpec.describe User, type: :model do
     it { should allow_value('sam@example.com').for(:email) }
     it { should_not allow_value('samexample.com').for(:email) }
   end
+
+  describe 'relationships' do
+    it { should have_many :favorites }
+  end
+
   describe 'instance methods' do
     it 'returns a randomly generated api key' do
       user = User.create!(name: 'Samuel Cox', email: 'samuel@example.com')
