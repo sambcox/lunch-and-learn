@@ -15,6 +15,7 @@ VCR.configure do |c|
   c.filter_sensitive_data('<EDAMAM_APP_KEY>') { ENV['EDAMAM_APP_KEY'] }
   c.filter_sensitive_data('<UNSPLASH_ACCESS_KEY>') { ENV['UNSPLASH_ACCESS_KEY'] }
   c.filter_sensitive_data('<UNSPLASH_SECRET_KEY>') { ENV['UNSPLASH_SECRET_KEY'] }
+  c.filter_sensitive_data('<PLACES_API_KEY>') { ENV['PLACES_API_KEY'] }
   c.hook_into :webmock
   c.configure_rspec_metadata!
 end

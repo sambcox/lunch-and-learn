@@ -363,6 +363,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           1,
@@ -378,11 +379,53 @@
           1,
           1,
           1,
+          1,
+          null,
+          1,
+          20,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/services/tourist_sight_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/samuelcox/turing_work/3mod/lunch-and-learn/app/poros/tourist_sight.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          20,
+          20,
+          20,
+          20,
+          null,
+          null,
+          1,
+          20,
           null,
           null
         ]
       }
     },
-    "timestamp": 1678120638
+    "timestamp": 1678121657
   }
 }
