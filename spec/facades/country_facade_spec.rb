@@ -7,6 +7,14 @@ RSpec.describe 'Country Facade' do
 
       expect(coords).to eq('24.93,60.17')
     end
+
+    it 'returns a random country' do
+      country_1 = CountryFacade.random_country
+      country_2 = CountryFacade.random_country
+
+      expect(country_1).to_not eq(country_2)
+      expect(country_1).to be_a(String)
+    end
   end
 
   describe 'Country Validations', :vcr do
