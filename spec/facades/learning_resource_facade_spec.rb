@@ -5,7 +5,7 @@ RSpec.describe 'Learning Resource Facade' do
     it 'returns a youtube video' do
       video = LearningResourceFacade.parsed_video('finland')
 
-      expect(video).to eq({:title=>"A Super Quick History of Finland", :youtube_video_id=>"m0SykybyJbU"})
+      expect(video).to eq({ title: 'A Super Quick History of Finland', youtube_video_id: 'm0SykybyJbU' })
     end
 
     it 'returns an array of images' do
