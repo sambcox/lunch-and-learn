@@ -19,6 +19,7 @@ class Error
       ActiveRecord::RecordNotFound => 404,
       ActiveModel::Errors => 422,
       ActiveRecord::StatementInvalid => 404,
+      BadDataError => 400,
       String => 400
     }
   end
