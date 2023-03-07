@@ -43,14 +43,26 @@ RSpec.describe 'Recipes Requests', type: :request do
         end
       end
 
-      it 'will return an empty array if param is given but no text is given' do
+      it 'will return an error if param is given but no text is given' do
         get api_v1_recipes_path(country: '')
 
-        expect(response).to be_successful
+        expect(response.status).to eq(400)
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-        expect(parsed_response[:data]).to eq([])
+        expect(parsed_response[:message]).to eq('There was an error processing your request')
+        expect(parsed_response[:errors]).to eq(['Country provided must be a valid country'])
+      end
+
+      it 'returns an error if country passed in is not valid' do
+        get api_v1_recipes_path(country: 'Invalid')
+
+        expect(response.status).to eq(400)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response[:message]).to eq('There was an error processing your request')
+        expect(parsed_response[:errors]).to eq(['Country provided must be a valid country'])
       end
     end
   end

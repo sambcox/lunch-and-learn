@@ -1,7 +1,6 @@
 class Api::V1::LearningResourcesController < ApplicationController
+  before_action :confirm_country
   def index
-    raise BadDataError, 'Country must be provided' unless params[:country]
-
     resource = LearningResourceFacade.find_resources(learning_resource_params[:country])
     render json: LearningResourceSerializer.new(resource)
   end

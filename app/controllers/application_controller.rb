@@ -9,4 +9,11 @@ class ApplicationController < ActionController::API
   def render_bad_data(error)
     render json: ErrorSerializer.serialize(Error.new(error)), status: :bad_request
   end
+
+  def confirm_country
+    raise BadDataError, 'Country must be provided' unless params[:country]
+    return if CountryFacade.valid_country?(params[:country])
+
+    raise BadDataError, 'Country provided must be a valid country'
+  end
 end

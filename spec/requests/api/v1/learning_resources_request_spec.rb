@@ -30,6 +30,17 @@ RSpec.describe 'Learning Resources Requests', type: :request do
         expect(parsed_response[:message]).to eq('There was an error processing your request')
         expect(parsed_response[:errors]).to eq(['Country must be provided'])
       end
+
+      it 'returns an error if country passed in is not valid' do
+        get api_v1_learning_resources_path(country: 'Invalid')
+
+        expect(response.status).to eq(400)
+
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(parsed_response[:message]).to eq('There was an error processing your request')
+        expect(parsed_response[:errors]).to eq(['Country provided must be a valid country'])
+      end
     end
   end
 end
